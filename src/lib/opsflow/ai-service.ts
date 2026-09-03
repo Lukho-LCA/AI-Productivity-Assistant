@@ -16,6 +16,7 @@ import {
   type Preferences,
   type ResearchBrief,
   type ResearchInput,
+  type Level,
   type ScheduledTask,
   type TaskInput,
   type TaskPlan,
@@ -85,7 +86,7 @@ export async function generateEmail(
   const paragraphs: string[] = [greetings[tone](recipient), openers[tone](purpose)];
 
   if (details.length === 1) {
-    paragraphs.push(details[0]);
+    paragraphs.push(details[0] as string);
   } else if (details.length > 1) {
     paragraphs.push(details.map((d) => `• ${d.replace(/^[-•]\s*/, "")}`).join("\n"));
   }
@@ -162,7 +163,7 @@ export async function summarizeMeeting(notes: string): Promise<MeetingSummary> {
 
 /* --------------------------------- planner --------------------------------- */
 
-const weight: Record<string, number> = { low: 1, medium: 2, high: 3 };
+const weight: Record<Level, number> = { low: 1, medium: 2, high: 3 };
 
 function fmtTime(minutesFromStart: number) {
   const total = 9 * 60 + minutesFromStart;
