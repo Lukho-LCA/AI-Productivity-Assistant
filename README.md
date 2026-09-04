@@ -1,314 +1,231 @@
-# OpsFlow AI: Smart Business Productivity
+# OpsFlow AI — Smart Business Productivity
 
-Build a modern responsive web application called "OpsFlow AI".
+**Turn everyday business work into organised action.**
 
-TAGLINE:
+## Project Overview
 
-"Turn everyday business work into organised action."
+OpsFlow AI is an integrated AI-powered workplace productivity assistant designed to help small businesses, managers, administrative staff, team leaders and project coordinators manage common workplace tasks from one platform.
 
-PURPOSE:
+Small businesses often have limited staff and resources, meaning the same people may be responsible for communication, meetings, planning, research and administration. OpsFlow AI brings these activities together and uses AI to turn workplace information into organised and actionable outputs.
 
-OpsFlow AI is an integrated AI-powered workplace productivity assistant for small business owners, managers, administrative staff, team leaders and project coordinators. It brings common workplace tasks into one dashboard instead of requiring separate tools.
+### Core Workflow
 
-CORE WORKFLOW:
+**Capture → Understand → Plan → Communicate → Act**
 
-Capture → Understand → Plan → Communicate → Act
+---
 
-IMPORTANT:
+## Problem Statement
 
-This is ONE integrated application, not separate projects.
+Workplace information can become scattered across emails, meeting notes, task lists and research documents. Repetitive administrative work can also consume valuable time and increase the risk of missed actions or deadlines.
 
-Create the following application structure:
+OpsFlow AI addresses this problem by providing several AI-powered workplace tools within one integrated dashboard.
 
-1. DASHBOARD
+---
 
-- Professional SaaS-style dashboard.
+## Key Features
 
-- Show OpsFlow AI branding and tagline.
+### 1. Smart Email Generator
 
-- Welcome section: "Good morning 👋"
+Generates professional workplace emails from user-provided information.
 
-- Short productivity-focused description.
+Users can specify:
 
-- Feature cards for:
+* Recipient or audience
+* Email purpose
+* Key information
+* Desired outcome
+* Tone: Formal, Friendly or Persuasive
 
-  • Smart Email
+The system produces an editable email subject and body.
 
-  • Meeting Notes
+### 2. Meeting Notes Summarizer
 
-  • Task Planner
+Converts raw meeting notes into structured information including:
 
-  • Research Assistant
+* Meeting summary
+* Key points
+* Decisions
+* Action items
+* Responsible persons
+* Deadlines
 
-  • AI Assistant
+The system is designed not to invent missing responsibilities, decisions or deadlines.
 
-- Show a simple workflow section:
+### 3. AI Task Planner
 
-  Meeting → Action Items → Tasks → Communication
+Creates prioritised workplace schedules based on:
 
-- Include quick-action buttons to open the main tools.
+* Task importance
+* Urgency
+* Deadlines
+* Estimated duration
 
-- Include a visible Responsible AI notice.
+The planner produces a realistic, non-overlapping schedule and identifies assumptions where information is incomplete.
 
-2. SIDEBAR NAVIGATION
+### 4. AI Research Assistant
 
-Create responsive sidebar navigation:
+Helps users understand workplace research topics or supplied source material by providing:
 
-- Dashboard
+* Summary
+* Key insights
+* Findings
+* Recommendations
+* Simplified explanation
 
-- Smart Email
+Users are encouraged to verify important information against original sources.
 
-- Meetings
+### 5. AI Workplace Assistant
 
-- Task Planner
+Provides an interactive workplace productivity assistant for questions relating to:
 
-- Research
+* Work planning
+* Productivity
+* Communication
+* Business administration
+* Task organisation
 
-- AI Assistant
+---
 
-- Settings
+## Integrated Workflow
 
-3. SMART EMAIL GENERATOR
+OpsFlow AI is designed as one connected productivity platform rather than five unrelated tools.
 
-Create a complete UI with:
+For example:
 
-INPUTS:
+**Meeting Notes → Action Items → Task Planner → Communication**
 
-- Recipient / audience
+A meeting can produce action items that can be transferred into the Task Planner. Meeting context can also be used to create a follow-up email.
 
-- Email purpose
+Research recommendations can similarly be converted into tasks.
 
-- Key information
+This integration helps transform information into action instead of simply generating text.
 
-- Desired outcome
+---
 
-- Tone selector: Formal, Friendly, Persuasive
+## Prompt Engineering
 
-OUTPUT:
+Prompt engineering was used to improve the quality, reliability and structure of AI-generated outputs.
 
-- Email subject
+The prompts follow a structured approach:
 
-- Email body
+1. **Role** — defines the AI's workplace role.
+2. **Context** — explains the information provided by the user.
+3. **Task** — specifies what the AI must produce.
+4. **Constraints** — prevents unsupported or invented information.
+5. **Output Format** — defines the structure of the response.
+6. **Responsible AI Instructions** — requires uncertainty to be identified instead of guessed.
 
-Include buttons:
+Example approach:
 
-- Generate
+> **Role:** Act as an AI workplace meeting assistant.
+> **Task:** Summarise the meeting and extract decisions and action items.
+> **Constraint:** Use only information provided by the user. Do not invent responsibilities or deadlines.
+> **Output:** Summary, Key Points, Decisions, Action Items, Responsible Person and Deadline.
 
-- Regenerate
+The prompts were tested using realistic workplace scenarios and refined to produce more structured and useful outputs.
 
-- Copy
+---
 
-- Clear
+## Responsible AI
 
-The generated email must use ONLY information supplied by the user and must not invent facts, promises, commitments or deadlines.
+OpsFlow AI includes responsible AI principles throughout the application.
 
-4. MEETING NOTES SUMMARIZER
+The application displays the following notice:
 
-INPUT:
+> **"AI outputs are suggestions and may contain errors or omissions. Review and verify important information before using it in business decisions or communications."**
 
-- Large text area for raw meeting notes or transcript.
+Responsible AI practices include:
 
-OUTPUT:
+* AI-generated content is clearly identified.
+* Users remain responsible for reviewing and editing AI outputs.
+* The system is instructed not to invent facts, deadlines, decisions or responsibilities.
+* Missing information should be identified rather than guessed.
+* Research outputs encourage verification against original sources.
+* Important business decisions should not rely solely on AI-generated information.
 
-- Meeting Summary
+---
 
-- Key Points
+## User Experience
 
-- Decisions
+The application uses a modern responsive dashboard with:
 
-- Action Items
+* Sidebar navigation
+* Dashboard overview
+* Feature cards
+* Input and output sections
+* Loading and error states
+* Editable AI-generated outputs
+* Copy functionality
+* Clear and regenerate controls
+* Responsive desktop and mobile layouts
+* Settings and responsible AI information
 
-- Responsible Person
+---
 
-- Deadline
+## Technologies and Tools
 
-Include:
+* **Lovable** — AI-assisted application development
+* **React** — frontend application
+* **TypeScript** — application development
+* **Tailwind CSS** — styling and responsive UI
+* **AI-powered generation** — workplace productivity features
+* **GitHub** — source control and project repository
 
-- Summarize
+---
 
-- Regenerate
+## Project Structure
 
-- Copy
+The application uses a component-based structure with reusable interface components and separate AI/service functionality.
 
-- Clear
+Key areas include:
 
-The AI must never invent decisions, responsibilities or deadlines. If information is missing, display "Not specified" rather than guessing.
+```text
+src/
+├── components/
+├── pages/
+├── services/
+├── hooks/
+└── ...
+```
 
-5. AI TASK PLANNER
+---
 
-Allow users to enter multiple workplace tasks with:
+## How to Use
 
-- Task name
+1. Open the OpsFlow AI application.
+2. Use the sidebar to select a productivity tool.
+3. Enter the required workplace information.
+4. Generate an AI response.
+5. Review and edit the generated output.
+6. Copy or transfer the result to another workflow where available.
 
-- Deadline
+---
 
-- Importance
+## Target Users
 
-- Urgency
+OpsFlow AI is designed primarily for:
 
-- Estimated duration
+* Small business owners
+* Managers
+* Administrative staff
+* Team leaders
+* Project coordinators
+* Freelancers and service providers
 
-Generate a prioritized task plan and realistic schedule.
+---
 
-The planner must:
+## Project Goal
 
-- Prioritize urgent and important tasks.
+The goal of OpsFlow AI is to demonstrate how AI can be applied responsibly to practical workplace problems.
 
-- Consider deadlines and estimated duration.
+Rather than replacing human decision-making, the application uses AI to assist with repetitive tasks, organise information and help users turn workplace information into actionable work.
 
-- Avoid overlapping tasks.
+**AI assists. Humans review. Work gets organised.**
 
-- Never invent deadlines.
-
-- Clearly identify assumptions where information is incomplete.
-
-6. AI RESEARCH ASSISTANT
-
-Create a research interface with:
-
-- Topic / question input
-
-- Optional pasted article or source material
-
-Output:
-
-- Summary
-
-- Key insights
-
-- Findings
-
-- Recommendations
-
-- Simplified explanation
-
-Clearly encourage users to verify important information against original sources.
-
-7. AI WORKPLACE ASSISTANT
-
-Create a chatbot interface for workplace productivity questions.
-
-Include:
-
-- Chat message area
-
-- User messages
-
-- AI responses
-
-- Input box
-
-- Send button
-
-- Clear chat
-
-- Example prompts
-
-The assistant should focus on workplace productivity, planning, communication and business administration.
-
-8. INTEGRATION / INNOVATION
-
-Design the application so the features work as ONE workflow.
-
-Meeting action items should be structured so they can be transferred into the Task Planner.
-
-Meeting context should be usable as context for drafting a follow-up email.
-
-Research findings should be structured so useful recommendations can become tasks.
-
-Include buttons such as:
-
-"Add to Task Planner"
-
-"Draft Follow-up Email"
-
-These can initially use local application state/demo data if a real AI backend is not configured.
-
-9. RESPONSIBLE AI
-
-Display this disclaimer clearly in the application:
-
-"AI outputs are suggestions and may contain errors or omissions. Review and verify important information before using it in business decisions or communications."
-
-Clearly label generated content as AI-generated.
-
-10. UI/UX
-
-Use a clean, modern, professional workplace SaaS design.
-
-Requirements:
-
-- Responsive desktop and mobile design.
-
-- Clear hierarchy.
-
-- Accessible forms.
-
-- Professional typography.
-
-- Consistent spacing.
-
-- Cards and panels.
-
-- Clear primary and secondary buttons.
-
-- Loading states.
-
-- Empty states.
-
-- Error states.
-
-- Success feedback.
-
-- Editable AI outputs.
-
-- Copy-to-clipboard functionality where appropriate.
-
-11. SETTINGS
-
-Create a simple Settings page containing:
-
-- Default email tone
-
-- AI response preferences
-
-- Responsible AI information
-
-- About OpsFlow AI
-
-12. TECHNICAL REQUIREMENTS
-
-Use a component-based architecture with reusable components.
-
-Keep AI functionality separated from UI components through a clear AI/service layer.
-
-Do not expose API keys in frontend code.
-
-If a real AI API is not configured, implement a clean mock/demo AI service so every feature can still demonstrate the complete workflow from user input to structured output.
-
-Do not add unrelated features such as payroll, accounting, ecommerce, payments, social networking, complex CRM or unnecessary authentication.
-
-The application must feel like one cohesive workplace productivity platform.
-
-Prioritize functionality and assessment requirements over unnecessary visual effects.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d99894e8-a396-4a10-baf6-5af0e6a1c35e).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+---
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+This project was developed using Lovable and is connected to GitHub for version control and synchronisation.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+The repository is maintained through GitHub, allowing changes made through the Lovable editor to remain synchronised with the project source code.
