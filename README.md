@@ -104,27 +104,92 @@ This integration helps transform information into action instead of simply gener
 
 ## Prompt Engineering
 
-Prompt engineering was used to improve the quality, reliability and structure of AI-generated outputs.
+Prompt engineering was a key part of the development of OpsFlow AI. Instead of relying on simple questions to generate AI responses, structured prompts were designed for each feature.
 
-The prompts follow a structured approach:
+The prompts were built around six elements:
 
-1. **Role** — defines the AI's workplace role.
-2. **Context** — explains the information provided by the user.
-3. **Task** — specifies what the AI must produce.
-4. **Constraints** — prevents unsupported or invented information.
-5. **Output Format** — defines the structure of the response.
-6. **Responsible AI Instructions** — requires uncertainty to be identified instead of guessed.
+1. **Role** – Define what the AI should act as.
+2. **Context** – Provide the workplace information supplied by the user.
+3. **Task** – Clearly explain what the AI needs to produce.
+4. **Constraints** – Prevent the AI from making assumptions or adding unsupported information.
+5. **Output Format** – Specify how the response should be structured.
+6. **Responsible AI Instructions** – Require the AI to identify missing or uncertain information rather than guessing.
 
-Example approach:
+### Example: Meeting Notes Prompt
 
-> **Role:** Act as an AI workplace meeting assistant.
-> **Task:** Summarise the meeting and extract decisions and action items.
-> **Constraint:** Use only information provided by the user. Do not invent responsibilities or deadlines.
-> **Output:** Summary, Key Points, Decisions, Action Items, Responsible Person and Deadline.
+**Role:**
+You are an AI workplace meeting assistant.
 
-The prompts were tested using realistic workplace scenarios and refined to produce more structured and useful outputs.
+**Context:**
+The user has provided raw meeting notes from a workplace meeting.
 
----
+**Task:**
+Summarise the meeting and identify key points, decisions and action items.
+
+**Constraints:**
+Only use information provided in the meeting notes. Do not invent decisions, responsibilities, deadlines or commitments.
+
+**Output Format:**
+Return:
+
+* Meeting Summary
+* Key Points
+* Decisions
+* Action Items
+* Responsible Person
+* Deadline
+
+**Responsible AI:**
+If an owner, deadline or decision is not provided, state "Not specified" instead of making an assumption.
+
+### Feature-Specific Prompt Strategy
+
+The same structure was adapted for the other OpsFlow AI features:
+
+**Smart Email Generator**
+
+* Uses the user's recipient, purpose, key information, desired outcome and tone.
+* Generates a professional email without inventing commitments or information.
+
+**AI Task Planner**
+
+* Uses task name, deadline, importance, urgency and estimated duration.
+* Prioritises tasks and creates a realistic schedule.
+* Does not create deadlines that were not provided.
+* States scheduling assumptions where necessary.
+
+**AI Research Assistant**
+
+* Uses the topic and source material supplied by the user.
+* Separates summaries and recommendations from unsupported claims.
+* Encourages users to verify important information against original sources.
+
+**AI Workplace Assistant**
+
+* Uses the user's workplace productivity question as context.
+* Provides practical, actionable guidance.
+* Avoids presenting uncertain information as fact.
+
+### Prompt Testing
+
+The prompts were tested using realistic workplace scenarios rather than only simple example questions.
+
+For example, the meeting assistant was tested with a website project meeting containing different team members, tasks and deadlines. The resulting output correctly extracted:
+
+* Sarah contacting suppliers by Friday
+* James preparing the quotation by Thursday
+* The client update being sent tomorrow
+* The website draft being reviewed next Monday
+
+The Task Planner then used these action items to create a prioritised schedule with task durations and buffers.
+
+This demonstrated the intended workflow:
+
+**Meeting Notes → Action Items → Task Planner → Communication**
+
+Testing also showed why constraints are important. When information such as an owner or deadline is missing, OpsFlow AI is instructed to return **"Not specified"** rather than creating information that was not provided.
+
+This approach improves reliability, reduces unsupported AI-generated information and keeps the user in control of the final output.
 
 ## Responsible AI
 
